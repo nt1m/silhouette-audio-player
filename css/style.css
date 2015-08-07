@@ -1,114 +1,114 @@
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-  }
-  .playing input[type="file"],
-  body:not(.playing) canvas,
-  body:not(.playing) #controls {
-    display: none;
-  }
-  #file-input {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    background-color: #0095dd;
-    color: #fff;
-    overflow: hidden;
-    transition: all 0.1s;
-    background-image: url(../img/music.svg);
-    background-repeat: no-repeat;
-    background-size: 60px;
-    background-position: center 60px;
-  }
-  #file-input:hover {
-    background-color: #0084cc;
-    transform: translate(-50%, -50%) scale(1.2);
-    box-shadow: 0 0 0 15px rgba(0,0,0,0.2);
-  }
-  #file-input input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-  }
-  #file-input::after {
-    content: "Pick an audio file";
-    display: block;
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    bottom: 40px;
-    text-align: center;
-  }
-  #controls {
-    position: fixed;
-    bottom: 0;
-    padding: 20px;
-    width: 100%;
-    text-align: center;
-    background-image: linear-gradient(transparent, rgba(0,0,0,.5));
-  }
-  #controls button {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    border: 2px solid #fff;
-    color: #fff;
-    filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
-    background: none;
-    margin-left: 20px;
-    transition: all 0.1s;
-    padding: 2px;
-    vertical-align: middle;
-  }
-  #controls button::after {
-    content: "";
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  #controls #shot::after {
-    background-image: url(../img/camera.svg);
-  }
-  #controls #replay::after {
-    background-image: url(../img/replay.svg);
-  }
-  #controls #play-pause::after {
-    background-image: url(../img/pause.svg);
-  }
-  #controls #play-pause.paused::after {
-    background-image: url(../img/play.svg);
-  }
-  #controls #shot {
-    filter: none;
-    box-shadow: 0 0 2px rgba(0,0,0,0.5);
-    width: 50px;
-    height: 50px;
-    background-color: #e74c3c;
-    border-color: transparent;
-  }
-  #controls #shot::after {
-    width: 24px;
-    height: 24px;
-  }
-  #controls #shot:hover {
-    background-color: #c0392b;
-    box-shadow: 0 0 0 10px rgba(0,0,0,.1)
-  }
-  canvas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+.playing input[type="file"],
+body:not(.playing) canvas,
+body:not(.playing) #controls {
+  display: none;
+}
+#file-input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: #0095dd;
+  color: #fff;
+  overflow: hidden;
+  transition: all 0.1s;
+  background-image: url(../img/music.svg);
+  background-repeat: no-repeat;
+  background-size: 60px;
+  background-position: center 60px;
+}
+#file-input:hover {
+  background-color: #0084cc;
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 0 15px rgba(0,0,0,0.2);
+}
+#file-input input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+#file-input::after {
+  content: "Pick an audio file";
+  display: block;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 40px;
+  text-align: center;
+}
+#controls {
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  background-image: linear-gradient(transparent, rgba(0,0,0,.5));
+}
+#controls button {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 2px solid #fff;
+  color: #fff;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+  background: none;
+  margin-left: 20px;
+  transition: all 0.1s;
+  padding: 2px;
+  vertical-align: middle;
+}
+#controls button::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#controls #shot::after {
+  background-image: url(../img/camera.svg);
+}
+#controls #replay::after {
+  background-image: url(../img/replay.svg);
+}
+#controls #play-pause::after {
+  background-image: url(../img/pause.svg);
+}
+#controls #play-pause.paused::after {
+  background-image: url(../img/play.svg);
+}
+#controls #shot {
+  filter: none;
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
+  width: 50px;
+  height: 50px;
+  background-color: #e74c3c;
+  border-color: transparent;
+}
+#controls #shot::after {
+  width: 24px;
+  height: 24px;
+}
+#controls #shot:hover {
+  background-color: #c0392b;
+  box-shadow: 0 0 0 10px rgba(0,0,0,.1)
+}
+canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
