@@ -1,3 +1,14 @@
+/** MediaDevices polyfill **/
+navigator.mediaDevices = navigator.mediaDevices || ((navigator.mozGetUserMedia || navigator.webkitGetUserMedia) ? {
+   getUserMedia: function(c) {
+     return new Promise(function(y, n) {
+       (navigator.mozGetUserMedia ||
+        navigator.webkitGetUserMedia).call(navigator, c, y, n);
+     });
+   }
+} : null);
+
+/** Audio visualizer **/
 const SCREEN_WIDTH = window.innerWidth;
 const SCREEN_HEIGHT = window.innerHeight;
 function AudioVisualizer({audio, analyser, canvas}) {
