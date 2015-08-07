@@ -45,15 +45,15 @@ function AudioPlayer({src, controls}) {
 }
 
 AudioPlayer.prototype = {
-  play() {
+  play: function() {
     this.audioEl.play();
     this.playPauseButton.classList.remove("paused");
   },
-  pause() {
+  pause: function() {
     this.audioEl.pause();
     this.playPauseButton.classList.add("paused");
   },
-  replay() {
+  replay: function() {
     this.pause();
     this.audioEl.currentTime = 0;
     this.play();
