@@ -1,19 +1,19 @@
 
 function AudioPlayer({src, controls}) {
-  let audio = document.createElement("audio");
+  var audio = document.createElement("audio");
   audio.src = src;
   document.body.appendChild(audio);
   this.audioEl = audio;
   
-  let ctx = new AudioContext();
+  var ctx = new AudioContext();
 
-  let analyser = this.analyser = ctx.createAnalyser();
+  var analyser = this.analyser = ctx.createAnalyser();
   analyser.connect(ctx.destination);
 
-  let mediaElSource = ctx.createMediaElementSource(this.audioEl);
+  var mediaElSource = ctx.createMediaElementSource(this.audioEl);
   mediaElSource.connect(analyser);
   
-  let visualizer = this.visualizer = new AudioVisualizer({
+  var visualizer = this.visualizer = new AudioVisualizer({
     audio: this.audioEl,
     analyser,
     canvas: document.getElementById("canvas")
@@ -61,8 +61,8 @@ AudioPlayer.prototype = {
 }
 
 function setAudio(file) {
-  let url = URL.createObjectURL(file);
-  let AP = new AudioPlayer({
+  var url = URL.createObjectURL(file);
+  var AP = new AudioPlayer({
     src: url,
     controls: document.getElementById("controls")
   });
