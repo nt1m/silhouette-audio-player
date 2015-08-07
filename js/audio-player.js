@@ -1,5 +1,7 @@
 
-function AudioPlayer({src, controls}) {
+function AudioPlayer(params) {
+  var src = params.src;
+  var controls = params.controls;
   var audio = document.createElement("audio");
   audio.src = src;
   document.body.appendChild(audio);

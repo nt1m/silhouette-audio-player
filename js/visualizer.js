@@ -9,12 +9,12 @@ navigator.mediaDevices = navigator.mediaDevices || ((navigator.mozGetUserMedia |
 } : null);
 
 /** Audio visualizer **/
-const SCREEN_WIDTH = window.innerWidth;
-const SCREEN_HEIGHT = window.innerHeight;
-function AudioVisualizer({audio, analyser, canvas}) {
-  this.canvas = canvas;
-  this.analyser = analyser;
-  this.audioEl = audio;
+var SCREEN_WIDTH = window.innerWidth;
+var SCREEN_HEIGHT = window.innerHeight;
+function AudioVisualizer(params) {
+  this.canvas = params.canvas;
+  this.analyser = params.analyser;
+  this.audioEl = params.audio;
   canvas.width = SCREEN_WIDTH;
   canvas.height = SCREEN_HEIGHT;
   this.refreshVideo = this.refreshVideo.bind(this);
@@ -55,7 +55,8 @@ AudioVisualizer.prototype = {
     this.clipCanvas(oldCanvasData);
   },
     
-  clipCanvas: function(oldCanvasData, averageLighting = 128.5) {
+  clipCanvas: function(oldCanvasData, averageLighting) {
+    averageLighting = averageLighting || 128.5;
     var canvas = this.canvas;
     var ctx = canvas.getContext("2d");
     var data = oldCanvasData;
